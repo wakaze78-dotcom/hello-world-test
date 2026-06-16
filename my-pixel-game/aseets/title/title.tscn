@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bjvcc8c56c5qc"]
+
+[ext_resource type="Script" uid="uid://bkju3kqqdm5cx" path="res://aseets/title/title.gd" id="1_yyaej"]
+[ext_resource type="Texture2D" uid="uid://rxua5bua64nd" path="res://aseets/title/catwalk.png" id="2_yyaej"]
+
+[node name="Title" type="Control" unique_id=222362794]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -320.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyaej")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1440528642]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yyaej")
+
+[node name="Label" type="Label" parent="." unique_id=136594360]
+layout_mode = 0
+offset_left = 235.0
+offset_top = -1.0
+offset_right = 318.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 9
+text = "Cat Walk and Jump"
+
+[node name="Button" type="Button" parent="." unique_id=510928804]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 141.0
+offset_right = 289.0
+offset_bottom = 162.0
+theme_override_font_sizes/font_size = 9
+text = "START"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dlj3honb328vr"]
+
+[ext_resource type="Script" uid="uid://d3h3865kxuq3v" path="res://aseets/clear/clear.gd" id="1_56715"]
+[ext_resource type="Texture2D" uid="uid://cj4l7e0bqyexj" path="res://aseets/clear/catend.png" id="1_q5yfc"]
+
+[node name="Clear" type="Control" unique_id=931065591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_56715")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1609207526]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_q5yfc")
+
+[node name="Button" type="Button" parent="." unique_id=1484737433]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 101.0
+offset_right = 256.0
+offset_bottom = 132.0
+text = "to Title"
+
+[node name="Label" type="Label" parent="." unique_id=2010474918]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 64.0
+offset_right = 278.0
+offset_bottom = 87.0
+text = "STAGE CLEAR!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
