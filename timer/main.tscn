@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://kd33wxpgcdih"]
+
+[ext_resource type="Script" uid="uid://4n1jh7gkb1pf" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dk7x4pu2vruav" path="res://slime_idle.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://m2osca33ok1u" path="res://slime_run.png" id="3_h2yge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("3_h2yge")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mycd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xm2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2yge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}],
+"loop": true,
+"name": &"idol",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 9.0
+}]
+
+[sub_resource type="Animation" id="Animation_h2yge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+resource_name = "Alert"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(1, 0.36078432, 0, 1), Color(0, 1, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycdy4"]
+_data = {
+&"RESET": SubResource("Animation_h2yge"),
+&"alert": SubResource("Animation_dg77c")
+}
+
+[node name="Main" type="Control" unique_id=796829418]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=821071428]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1605840496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharArea" type="Control" parent="HBoxContainer" unique_id=9807124]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/CharArea" unique_id=1097080676]
+texture_filter = 1
+position = Vector2(74, 73)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_7mycd")
+animation = &"run"
+autoplay = "idol"
+frame = 2
+frame_progress = 0.7982547
+
+[node name="TimeArea" type="Control" parent="HBoxContainer" unique_id=1268797318]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TimeArea" unique_id=791281075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer/TimeArea/VBoxContainer" unique_id=909925251]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "00:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModeButton" type="Button" parent="HBoxContainer/TimeArea/VBoxContainer" unique_id=1135454764]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "CLOCK"
+
+[node name="Timer" type="Timer" parent="." unique_id=70373004]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1258122070]
+libraries/ = SubResource("AnimationLibrary_ycdy4")
+
+[connection signal="pressed" from="HBoxContainer/TimeArea/VBoxContainer/ModeButton" to="." method="_on_mode_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
