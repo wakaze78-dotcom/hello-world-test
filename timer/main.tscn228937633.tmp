@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://4n1jh7gkb1pf" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://dk7x4pu2vruav" path="res://slime_idle.png" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://dv8bb7bqo2vx" path="res://kusa1.png" id="2_4c57u"]
-[ext_resource type="Texture2D" uid="uid://cdpml3ujd1m60" path="res://Pixel-art-grassland1.jpg" id="2_efxa6"]
 [ext_resource type="Texture2D" uid="uid://m2osca33ok1u" path="res://slime_run.png" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://cmwljx54mw7rv" path="res://Sprite-0003.png" id="4_kek77"]
+[ext_resource type="Texture2D" uid="uid://cpsa6ofg5wo6v" path="res://Sprite-0001.png" id="4_1bvp3"]
 [ext_resource type="FontFile" uid="uid://cx8bl8tdgt1np" path="res://x8y12pxDenkiChip.ttf" id="5_lquwl"]
 [ext_resource type="StyleBox" uid="uid://c3steu7yiej7w" path="res://startstop_butom_clore_hover.tres" id="6_7mycd"]
 [ext_resource type="StyleBox" uid="uid://ck8w5aox7hw5y" path="res://startstop_butom_clore.tres" id="6_272bh"]
@@ -95,9 +93,6 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_dg77c"]
-colors = PackedColorArray(1, 1, 1, 1, 0.7764706, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 bg_color = Color(0.42040902, 0.3321219, 0.6820822, 1)
 corner_radius_top_left = 4
@@ -159,24 +154,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0xm2m")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=433505398]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -296.0
-offset_top = -54.0
-offset_right = -296.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-texture = ExtResource("2_efxa6")
-expand_mode = 1
-stretch_mode = 6
-
 [node name="Background" type="ColorRect" parent="." unique_id=821071428]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,32 +176,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 layout_direction = 2
 
-[node name="CharLayoutGroup" type="Control" parent="HBoxContainer/CharArea" unique_id=1126838379]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StageImage" type="TextureRect" parent="HBoxContainer/CharArea/CharLayoutGroup" unique_id=2061063706]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 17.0
-offset_top = -38.0
-offset_right = -137.33333
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(3, 3)
-texture = ExtResource("2_4c57u")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/CharArea/CharLayoutGroup" unique_id=1097080676]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/CharArea" unique_id=1097080676]
 texture_filter = 1
 position = Vector2(74, 73)
 scale = Vector2(3, 3)
@@ -233,84 +186,67 @@ autoplay = "idol"
 frame = 2
 frame_progress = 0.7982547
 
-[node name="StopParticles" type="CPUParticles2D" parent="HBoxContainer/CharArea/CharLayoutGroup" unique_id=467079489]
-emitting = false
-amount = 29
-one_shot = true
-explosiveness = 0.8
-direction = Vector2(0, -1)
-spread = 164.16
-gravity = Vector2(0, 100)
-initial_velocity_min = 50.0
-initial_velocity_max = 150.0
-scale_amount_max = 3.0
-color_ramp = SubResource("Gradient_dg77c")
-
 [node name="TimeArea" type="Control" parent="HBoxContainer" unique_id=1268797318]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LayoutGroup" type="Control" parent="HBoxContainer/TimeArea" unique_id=1878502456]
+[node name="Frame" type="TextureRect" parent="HBoxContainer/TimeArea" unique_id=694637561]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TimeAreaImage" type="TextureRect" parent="HBoxContainer/TimeArea/LayoutGroup" unique_id=694637561]
-texture_filter = 1
-layout_mode = 0
-offset_right = 190.0
-offset_bottom = 128.0
-texture = ExtResource("4_kek77")
+texture = ExtResource("4_1bvp3")
 expand_mode = 1
+stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TimeArea/LayoutGroup" unique_id=791281075]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TimeArea" unique_id=791281075]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -62.0
-offset_right = 64.0
-offset_bottom = 62.0
+offset_left = -90.5
+offset_top = -54.0
+offset_right = 90.5
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 3
-alignment = 1
 
-[node name="TimeGroup" type="HBoxContainer" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer" unique_id=669284864]
+[node name="TimeGroup" type="HBoxContainer" parent="HBoxContainer/TimeArea/VBoxContainer" unique_id=669284864]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 theme_override_constants/separation = 4
-alignment = 1
 
-[node name="SubButton" type="Button" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer/TimeGroup" unique_id=745890124]
-custom_minimum_size = Vector2(15, 30)
+[node name="SubButton" type="Button" parent="HBoxContainer/TimeArea/VBoxContainer/TimeGroup" unique_id=745890124]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+size_flags_horizontal = 10
 size_flags_vertical = 4
-text = "−"
+text = "-"
 
-[node name="TimeLabel" type="Label" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer/TimeGroup" unique_id=520438578]
+[node name="TimeLabel" type="Label" parent="HBoxContainer/TimeArea/VBoxContainer/TimeGroup" unique_id=520438578]
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("5_lquwl")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "00:00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AddButton" type="Button" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer/TimeGroup" unique_id=211619587]
-custom_minimum_size = Vector2(15, 30)
+[node name="AddButton" type="Button" parent="HBoxContainer/TimeArea/VBoxContainer/TimeGroup" unique_id=211619587]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+size_flags_horizontal = 2
 size_flags_vertical = 4
 text = "+"
 
-[node name="StartStopButton" type="Button" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer" unique_id=2010398127]
+[node name="StartStopButton" type="Button" parent="HBoxContainer/TimeArea/VBoxContainer" unique_id=2010398127]
 custom_minimum_size = Vector2(128, 20)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -320,7 +256,7 @@ theme_override_styles/normal = ExtResource("6_272bh")
 theme_override_styles/hover = ExtResource("6_7mycd")
 text = "START"
 
-[node name="ResetButton" type="Button" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer" unique_id=1191264131]
+[node name="ResetButton" type="Button" parent="HBoxContainer/TimeArea/VBoxContainer" unique_id=1191264131]
 custom_minimum_size = Vector2(128, 20)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -330,13 +266,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_272bh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5vw27")
 text = "RESET"
 
-[node name="DataLabel" type="Label" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer" unique_id=2114790923]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_lquwl")
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-
-[node name="ModeButton" type="Button" parent="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer" unique_id=1135454764]
+[node name="ModeButton" type="Button" parent="HBoxContainer/TimeArea/VBoxContainer" unique_id=1135454764]
 custom_minimum_size = Vector2(128, 20)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -352,5 +282,5 @@ autostart = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1258122070]
 libraries/ = SubResource("AnimationLibrary_ycdy4")
 
-[connection signal="pressed" from="HBoxContainer/TimeArea/LayoutGroup/VBoxContainer/ModeButton" to="." method="_on_mode_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/TimeArea/VBoxContainer/ModeButton" to="." method="_on_mode_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
